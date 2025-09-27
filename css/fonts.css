@@ -1,0 +1,17 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Onest';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Onest-Regular"), url("../fonts/Onest-Regular.woff2") format("woff2"), 
+    url("../fonts/Onest-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Onest';
+  font-style: normal;
+  font-weight: 800;
+  src: local("Onest-ExtraBold"), url("../fonts/Onest-ExtraBold.woff2") format("woff2"), 
+    url("../fonts/Onest-ExtraBold.woff") format("woff");
+}
