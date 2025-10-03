@@ -2,6 +2,7 @@ import './style.css';
 import { getComedians } from "../scripts/api";
 import { createComedianBlock } from './comedians';
 import { inintForm } from '../scripts/form';
+import { initChangeSection } from '../scripts/changeSection';
 
 const init = async () => {
   const bookingComediansList = document.querySelector('.booking__comedians-list');
@@ -11,6 +12,13 @@ const init = async () => {
   const bookingInputPhone = document.querySelector('.booking__input_phone');
   const bookingInputTicket = document.querySelector('.booking__input_ticket');
 
+  const event = document.querySelector(".event");
+  const booking = document.querySelector(".booking");
+  const eventButtonReserve = document.querySelector(".event__button_reserve");
+  const eventButtonEdit = document.querySelector(".event__button_edit");
+  const bookingTitle = document.querySelector(".booking__title");
+
+
   inintForm(bookingForm, bookingInputFullname, bookingInputPhone, bookingInputTicket)
 
   const comedians = await getComedians();
@@ -19,6 +27,8 @@ const init = async () => {
     countComedians.textContent = comedians.length;
     const comedianBlock = createComedianBlock(comedians, bookingComediansList);
     bookingComediansList.append(comedianBlock);
+
+    initChangeSection(bookingForm, event, booking, eventButtonReserve, eventButtonEdit, bookingTitle);
   };
 };
 
